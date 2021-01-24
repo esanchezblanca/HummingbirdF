@@ -1,0 +1,21 @@
+.generalNavbar{
+    background-color: #3D405B;    
+}
+
+
+.logoImg{
+    width: 8em ;
+    height: 6em ;
+}
+
+.logoName{
+    font-family: "Lucida Handwriting", "cursive";
+    font-weight: 1600;
+    color: rgb(61, 60, 60);
+    color:inherit
+}
+
+.logoName:hover{
+    text-decoration: none;
+    color:inherit
+}

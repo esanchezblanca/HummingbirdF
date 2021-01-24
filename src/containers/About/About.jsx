@@ -20,7 +20,7 @@ export default class About extends Component {
                         Hummingbird se concibe como una agenda escolar 3.0. En ella los profesores pueden encargar tareas a los alumnos y los alumnos, por su parte, pueden plantear dudas o contestar.
                         La principal misión de este proyecto es agilizar la comunicación escolar y, a su vez, dejar constancia de todo.
                     </p>
-                    <h2 className="subtitle">¿A quién está dirigido Hummingbird?</h2>
+                    <h2 className="subtitle">¿A quién va dirigido Hummingbird?</h2>
                     <p>
                         Esta primera versión de Hummingbird está pensada especialmente para los alumnos de secundaria. <br />
                         La app ha sido diseñada para que los alumnos puedan registrarse desde primero hasta cuarto de la E.S.O.

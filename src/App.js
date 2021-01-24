@@ -1,5 +1,6 @@
-import './App.css';
 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Navigation from './components/Navigation/Navigation';
@@ -14,7 +15,7 @@ function App() {
         <Navigation />
 
 
-        <Route path="/" component={Home}/>
+        <Route path="/" exact component={Home}/>
         <Route path="/about" component={About}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
