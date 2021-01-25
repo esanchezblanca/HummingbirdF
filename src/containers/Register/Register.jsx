@@ -23,50 +23,49 @@ const Register = () => {
 
       }
       await axios.post('https://hummingbirdback.herokuapp.com/api/user/register', register).then(res => {
-        notification.success({ message: 'Registered'})
+        notification.success({ message: 'Usuario registrado'})
         history.push('/login')
       })
       .catch(err => {
           console.log(err.response)
-        notification.error({ message: 'Cannot register', description:'dgfdfg'})
+        notification.error({ message: 'Error en registro', description:'No se pudo completar el registro'})
       })
       
     }
     catch (error) {
       console.error(error)
-      notification.error({ message: 'Cannot register', description: 'Error on register' })
+      notification.error({ message: 'Error en registro', description: 'No se pudo completar el registro' })
     }
   }
     return(
        
-        <form className="divRegister" onSubmit={handleSubmit}> 
-          <div className="row " id="Body">
-                <div className="registerGralDiv">
-                    <h4>Register</h4>
-
-
-                    <label>Nombre</label>
+        <form className="divRegister" onSubmit={handleSubmit}>
+            <h4 className="title1">Crear una cuenta</h4> 
+          <div className="container" >
+                <div>
+                    <label className="labels">Nombre</label>
                     <input type="text" name="name" placeholder="Nombre"/>
-                    <label>Apellido</label>
+                    <label className="labels">Apellido</label>
                     <input type="text" name="lastName" placeholder="Apellido" />
-                    <label>Correo</label>
+                    <label className="labels">Correo</label>
                     <input type="email" name="mail" placeholder="Mail" />
-                    <label>Contraseña</label>
+                    <label className="labels">Contraseña</label>
                     <input type="password" name="password" placeholder="Contraseña" />
-                    <label>Teléfono</label>
+                    <label className="labels">Teléfono</label>
                     <input type="number" name="phone" placeholder="Teléfono"/>
-                    <div className="select">
-                        <label>Curso</label>
-                        <select name="year">
+
+                    <label className="selector">Curso</label>
+                        <select className="selector" name="year">
                             <option defaultValue value="1">1º ESO</option>
                             <option value="2">2º ESO</option>
                             <option value="3">3º ESO</option>
                             <option value="4">4º ESO</option>
                         </select>
-                    </div>
 
-                    <input type="submit" className="button" value="Sign Up"/>
-                    <a href="/login">Login</a>
+                    
+                        <input type="submit" className="submitButton" value="Sign Up"/>
+                    <a href="/login">Ya tengo cuenta</a>
+                    
                 </div>
                 </div>
         </form>
