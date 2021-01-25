@@ -25,9 +25,10 @@ export default class Navigation extends Component {
                             <li className="nav-button">
                                 <a className="nav-link" href="/login">Login</a>
                             </li>
-                            <li className="nav-button">
+                            <li className="nav-button"  >
                                 <a className="nav-link" href="register">Register</a>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>

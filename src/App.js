@@ -8,6 +8,7 @@ import Home from './containers/Home/Home';
 import About from './containers/About/About';
 import Login from './containers/Login/Login';
 import Register from './containers/Register/Register';
+import Dashboard from './containers/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" component={About}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
+        <Route path="/dashboard" component={Dashboard}/>
       </Router>
   );
 }

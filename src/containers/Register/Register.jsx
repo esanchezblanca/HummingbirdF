@@ -4,6 +4,7 @@ import axios from 'axios';
 import { notification } from 'antd';
 import 'antd/dist/antd.css';
 import { useHistory } from 'react-router-dom';
+import validator from 'validator';
 
 
 const Register = () => {
@@ -11,6 +12,7 @@ const Register = () => {
     const handleSubmit = async (event) => {
     try {
       event.preventDefault();
+     
       const form = event.target;
       const register = {
         name: form.name.value,
@@ -50,7 +52,7 @@ const Register = () => {
                     <label className="labels">Correo</label>
                     <input type="email" name="mail" placeholder="Mail" />
                     <label className="labels">Contraseña</label>
-                    <input type="password" name="password" placeholder="Contraseña" />
+                    <input type="password" name="password" placeholder="Contraseña"/>
                     <label className="labels">Teléfono</label>
                     <input type="number" name="phone" placeholder="Teléfono"/>
 

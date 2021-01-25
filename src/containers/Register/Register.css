@@ -1,5 +1,7 @@
 body{
     background-image: url(../../images/pencils.jpg);
+    
+    
    
 }
 
@@ -14,7 +16,7 @@ body{
 .container div{
     width: 250px;
     height: 100%;
-    background-image: 
+    
 }
 
 .labels{
