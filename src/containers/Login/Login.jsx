@@ -21,7 +21,7 @@ const Login = () => {
         localStorage.setItem('userToken', res.data.token);
         localStorage.setItem('user', res.data.user);
         notification.success({ message: 'Login correcto'})
-        history.push('/home')
+        history.push('/dashboard')
       })
       .catch(err => {
         notification.error({ message: 'Error en el login', description:'No se pudo acceder'})

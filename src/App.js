@@ -9,6 +9,8 @@ import About from './containers/About/About';
 import Login from './containers/Login/Login';
 import Register from './containers/Register/Register';
 import Dashboard from './containers/Dashboard/Dashboard';
+import Task from './containers/Task/Task';
+import Profile from './containers/Profile/Profile';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
         <Route path="/dashboard" component={Dashboard}/>
+        <Route path="/task" component={Task}/>
+        <Route path="/profile" component={Profile}/>
       </Router>
   );
 }

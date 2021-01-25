@@ -4,6 +4,7 @@ import "./Dashboard.css";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+import Taskbar from '../../components/Taskbar/Taskbar';
 
 
 export default class Dashboard extends Component {
@@ -38,6 +39,7 @@ export default class Dashboard extends Component {
     render() {
         return (
             <section>
+                <Taskbar/>
                 <h1>Estas son tus tareas:</h1>
                 { this.state.taskList.map((task) => {
                     return (
@@ -52,5 +54,4 @@ export default class Dashboard extends Component {
                 }
             </section>);
     }
-
 }
