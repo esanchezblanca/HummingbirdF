@@ -1,0 +1,11 @@
+.registerGralDiv{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50%;
+}
+
+
+.select{
+    display: flex;
+    flex-direction: row;
+}
