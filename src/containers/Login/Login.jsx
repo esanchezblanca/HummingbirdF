@@ -19,7 +19,7 @@ const Login = () => {
       }
       await axios.post('https://hummingbirdback.herokuapp.com/api/user/login', login).then(res => {
         localStorage.setItem('userToken', res.data.token);
-        localStorage.setItem('user', res.data.user);
+        localStorage.setItem('user', JSON.stringify(res.data.user));
         notification.success({ message: 'Login correcto'})
         history.push('/dashboard')
       })

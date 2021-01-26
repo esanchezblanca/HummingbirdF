@@ -12,16 +12,25 @@ const Task = () => {
     const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const user = localStorage.getItem('user');
+      const user = JSON.parse(localStorage.getItem('user'));
+      const token = localStorage.getItem('userToken')
+      console.log("esto es un usuario", user);
       const form = event.target;
       const addTask = {
         title: form.title.value,
         description: form.description.value,
-        year_id: form.year_id.value,
+        year_id: form.year.value,
         user_id: user.id
 
       }
-      await axios.post('https://hummingbirdback.herokuapp.com/api/task', addTask).then(res => {
+
+      console.log("Esto es la tarea", addTask)
+      await axios.post('https://hummingbirdback.herokuapp.com/api/task', addTask, {
+        headers: {
+          'user-token': token
+        }
+      }).then(res => {
+        console.log(res)
         notification.success({ message: 'Tarea añadida'})
         history.push('/dashboard')
       })
@@ -45,7 +54,7 @@ const Task = () => {
                     <label className="labels">Título</label>
                     <input type="text" name="title" placeholder="Nombre"/>
                     <label className="labels">Descripción</label>
-                    <textarea className="textarea"  placeholder="Introduce la descripción" />             
+                    <textarea className="textarea" name="description" placeholder="Introduce la descripción" />             
 
                     <label className="selector">Curso</label>
                         <select className="selector" name="year">
