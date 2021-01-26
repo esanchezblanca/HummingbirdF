@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 import Taskbar from '../../components/Taskbar/Taskbar';
+import TaskList from '../../containers/TaskList/TaskList';
+import TaskDetail from '../../containers/TaskDetail/TaskDetail';
 
 
 export default class Dashboard extends Component {
@@ -16,42 +18,22 @@ export default class Dashboard extends Component {
     }
 
     componentDidMount() {
-        this.getTask();
+      
     }
 
 
-    getTask() {
-        const token = localStorage.getItem('userToken')
-        axios.get(`https://hummingbirdback.herokuapp.com/api/task`, {
-            headers: {
-              'user-token': token
-            }
-          })
-            .then(res => {
-                console.log(res)
-                this.setState({
-                    taskList: res.data
-                });
-            })
-            .catch(err => { })
-    }
+ 
 
     render() {
         return (
             <section>
-                <Taskbar/>
-                <h1>Estas son tus tareas:</h1>
-                { this.state.taskList.map((task) => {
-                    return (
-                        <div>
-                            <p>Título: {task.title} </p>
-                            <p>Descripción: {task.description}</p>
-                        </div>
+                <Taskbar />
+                <div className="taskList">
+                    <TaskList />
+               
+                    <TaskDetail/>
+                </div>
 
-
-                    );
-                })
-                }
             </section>);
     }
 }

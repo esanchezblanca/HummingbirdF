@@ -5,7 +5,7 @@ import { notification } from 'antd';
 import 'antd/dist/antd.css';
 import { useHistory } from 'react-router-dom';
 
-
+//Este componente está pensado para crear una tarea
 const Task = () => {
 
     const history = useHistory();
