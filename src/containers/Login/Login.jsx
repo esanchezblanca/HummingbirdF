@@ -1,12 +1,16 @@
-import React, { Component } from 'react'
-import './Login.css';
+import React, { useRef } from 'react'
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import './Login.css';
 import { notification } from 'antd';
 import 'antd/dist/antd.css';
-import { useHistory } from 'react-router-dom';
-import validator from 'validator';
 
-const Login = () => {
+import {saveToken} from '../../store/login/action';
+import saveUser from '../../store/user/action';
+
+const Login = ({saveToken,saveUser}) => {
     
     const history = useHistory();
     const handleSubmit = async (event) => {
@@ -18,12 +22,14 @@ const Login = () => {
         password: form.password.value,
       }
       await axios.post('https://hummingbirdback.herokuapp.com/api/user/login', login).then(res => {
-        localStorage.setItem('userToken', res.data.token);
-        localStorage.setItem('user', JSON.stringify(res.data.user));
+
+        saveToken(res.data.token);
+        saveUser(JSON.stringify(res.data.user));
         notification.success({ message: 'Login correcto'})
         history.push('/dashboard')
       })
       .catch(err => {
+        console.log(err)
         notification.error({ message: 'Error en el login', description:'No se pudo acceder'})
       })
       
@@ -33,7 +39,7 @@ const Login = () => {
       notification.error({ message: 'Error en el login', description: 'No se pudo acceder' })
     }
 }
-    
+
     
         return (
             <form className="divLogin" onSubmit={handleSubmit}>
@@ -55,4 +61,4 @@ const Login = () => {
     
 }
 
-export default Login;
+export default connect(null, {saveToken, saveUser}) (Login);

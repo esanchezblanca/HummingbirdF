@@ -1,51 +1,50 @@
 import React, { Component } from 'react';
 import "./TaskList.css";
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 
 
-
-
-export default class TaskList extends Component {
+class TaskList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            token : localStorage.getItem('userToken'),
-            taskList: []
+            taskList: [],
+            token: ""
         };
-        
+
     }
 
     redirectToHome = () => {
-   
-       }
-   
-    
+
+    }
+
+
     componentDidMount() {
+        console.log("tokoen precarga",this.state.token)
         this.getTask();
     }
 
 
     openDetail() {
-        
+
     }
 
-    deleteTask(id){
-        
+    deleteTask(id) {
         axios.delete(`https://hummingbirdback.herokuapp.com/api/task/${id}`, {
             headers: {
-                'user-token': this.state.token
+                'user-token': this.props.token
             }
         }).then(res => {
             this.getTask();
         })
-        .catch(err => {})
+            .catch(err => { })
     }
 
     getTask() {
         axios.get(`https://hummingbirdback.herokuapp.com/api/task`, {
             headers: {
-                'user-token': this.state.token
+                'user-token': this.props.token
             }
         })
             .then(res => {
@@ -54,14 +53,16 @@ export default class TaskList extends Component {
                     taskList: res.data
                 });
             })
-            .catch(err => {})
+            .catch(err => {
+                console.log(err)
+             })
     }
 
     render() {
         return (
             <section className="sidebar">
                 <h1>Tareas pendientes:</h1>
-                { this.state.taskList.map((task) => {
+                 { this.state.taskList.map((task) => {
                     return (
                         <div className="list" onClick={() => this.openDetail()}>
                             <div>
@@ -73,7 +74,14 @@ export default class TaskList extends Component {
 
                     );
                 })
-                }
+                } 
             </section>);
     }
 }
+const mapStateToProps = state => {
+    return {
+        token: state.loginReducer.token
+   }
+}
+
+export default connect(mapStateToProps)(TaskList);

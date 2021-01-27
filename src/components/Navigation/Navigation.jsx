@@ -2,9 +2,26 @@ import React, { Component } from 'react';
 import './Navigation.css'
 import Logo from '../../images/Logo.png';
 
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export default class Navigation extends Component {
+import {revokeToken} from '../../store/login/action';
+
+class Navigation extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: {}
+
+        };
+
+    }
+
+    logout = () => {
+       revokeToken("")
+    }
+
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,20 +36,36 @@ export default class Navigation extends Component {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-button">
-                                
                                 <a className="nav-link" href="/about">About Us</a>
                             </li>
-                            <li className="nav-button">
-                                <a className="nav-link" href="/login">Login</a>
-                            </li>
-                            <li className="nav-button"  >
-                                <a className="nav-link" href="register">Register</a>
-                            </li>
 
-                            <li className="nav-button"  >
-                                <a className="nav-link" href="logout">Logout</a>
-                            </li>
-                            
+
+                            {this.props.user ?
+                                <div className="collapse navbar-collapse" id="navbarNav">
+                                    <li activeClassName="activado" className="nav-button"  >
+                                        <a className="nav-link" href="profile">Perfil</a>
+                                    </li>
+                                    <li activeClassName="activado" className="nav-button"  >
+                                        <a className="nav-link" href="dashboard">Dashboard</a>
+                                    </li>
+                                    <li activeClassName="activado" className="nav-button"  >
+                                        <a className="nav-link" href="/" onClick={()=>this.logout()}>Logout</a>
+                                    </li>
+                                </div>
+
+
+                                :
+                                <div className="collapse navbar-collapse" id="navbarNav">
+                                    <li activeClassName="activado" className="nav-button"  >
+                                        <a className="nav-link" href="login">Login</a>
+                                    </li>
+
+                                    <li className="nav-button"  >
+                                        <a className="nav-link" href="register">Register</a>
+                                    </li>
+                                </div>
+
+                            }
                         </ul>
                     </div>
                 </div>
@@ -40,6 +73,13 @@ export default class Navigation extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        user: state.userReducer.user
+    }
+}
+
+export default connect(mapStateToProps)(Navigation);
 
 
 

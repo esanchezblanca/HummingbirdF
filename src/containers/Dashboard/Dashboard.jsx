@@ -1,39 +1,53 @@
 import React, { Component } from 'react';
 import "./Dashboard.css";
-// import { Card } from 'antd';
-import axios from 'axios';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import Taskbar from '../../components/Taskbar/Taskbar';
 import TaskList from '../../containers/TaskList/TaskList';
 import TaskDetail from '../../containers/TaskDetail/TaskDetail';
 
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            token: "",
             taskList: []
         };
     }
 
-    componentDidMount() {
-      
-    }
 
-
- 
 
     render() {
         return (
-            <section>
-                <Taskbar />
-                <div className="taskList">
-                    <TaskList />
-               
-                    <TaskDetail/>
-                </div>
 
-            </section>);
+
+            <div>
+                {this.props.token ?
+                    <div>
+                        <div className="taskList">
+
+                            <TaskList />
+
+                            <TaskDetail />
+
+                        </div></div>
+                    :
+                    <div>
+                        {useHistory.push("/")}
+                    </div>
+                }
+
+            </div>
+        );
     }
 }
+
+
+const mapStateToProps = state => {
+    return {
+        token: state.loginReducer.token
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard);
