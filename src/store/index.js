@@ -1,15 +1,20 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, compose } from 'redux';
 import loginReducer from './login/reducer';
 import userReducer from './user/reducer';
+import persistState from 'redux-localstorage'
 
 const reducers = combineReducers({
-    userReducer,
-    loginReducer,
+   user: userReducer,
+   token: loginReducer,
 });
+
+const mainEnhancer = compose(persistState('token','user'));
 
 const store = createStore(
     reducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    {},
+    mainEnhancer
 );
+
 
 export default store;

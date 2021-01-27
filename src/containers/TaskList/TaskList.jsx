@@ -21,7 +21,7 @@ class TaskList extends Component {
 
 
     componentDidMount() {
-        console.log("tokoen precarga",this.state.token)
+        console.log("token precarga",this.props.token.token)
         this.getTask();
     }
 
@@ -33,7 +33,7 @@ class TaskList extends Component {
     deleteTask(id) {
         axios.delete(`https://hummingbirdback.herokuapp.com/api/task/${id}`, {
             headers: {
-                'user-token': this.props.token
+                'user-token': this.props.token.token
             }
         }).then(res => {
             this.getTask();
@@ -44,7 +44,7 @@ class TaskList extends Component {
     getTask() {
         axios.get(`https://hummingbirdback.herokuapp.com/api/task`, {
             headers: {
-                'user-token': this.props.token
+                'user-token': this.props.token.token
             }
         })
             .then(res => {
@@ -80,7 +80,7 @@ class TaskList extends Component {
 }
 const mapStateToProps = state => {
     return {
-        token: state.loginReducer.token
+        token: state.token
    }
 }
 

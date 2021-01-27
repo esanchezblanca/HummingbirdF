@@ -11,8 +11,7 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            token: "",
-            taskList: []
+            token: ""
         };
     }
 
@@ -21,23 +20,11 @@ class Dashboard extends Component {
     render() {
         return (
 
-
             <div>
-                {this.props.token ?
-                    <div>
-                        <div className="taskList">
-
-                            <TaskList />
-
-                            <TaskDetail />
-
-                        </div></div>
-                    :
-                    <div>
-                        {useHistory.push("/")}
-                    </div>
-                }
-
+                <div className="taskList">
+                    <TaskList />
+                    <TaskDetail />
+                </div>
             </div>
         );
     }
@@ -46,7 +33,7 @@ class Dashboard extends Component {
 
 const mapStateToProps = state => {
     return {
-        token: state.loginReducer.token
+        token: state.token
     }
 }
 

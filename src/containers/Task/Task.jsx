@@ -1,19 +1,27 @@
 import React from 'react';
-import "./Task.css";
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+//Estilos
+import "./Task.css";
 import { notification } from 'antd';
 import 'antd/dist/antd.css';
-import { useHistory } from 'react-router-dom';
+
+//Redux
+
+
 
 //Este componente está pensado para crear una tarea
-const Task = () => {
+const Task = ({token}) => {
 
     const history = useHistory();
     const handleSubmit = async (event) => {
     try {
       event.preventDefault();
       const user = JSON.parse(localStorage.getItem('user'));
-      const token = localStorage.getItem('userToken')
+
+      // const token = localStorage.getItem('userToken')
       console.log("esto es un usuario", user);
       const form = event.target;
       const addTask = {
@@ -23,13 +31,16 @@ const Task = () => {
         user_id: user.id
 
       }
-
+      
       console.log("Esto es la tarea", addTask)
-      await axios.post('https://hummingbirdback.herokuapp.com/api/task', addTask, {
+
+      await axios.post('https://hummingbirdback.herokuapp.com/api/task', addTask,{
         headers: {
-          'user-token': token
+        
+         'user-token': token
         }
-      }).then(res => {
+      })
+      .then(res => {
         console.log(res)
         notification.success({ message: 'Tarea añadida'})
         history.push('/dashboard')
@@ -71,6 +82,12 @@ const Task = () => {
                 </div>
         </form>
     );
+ }
+ 
+const mapStateToProps = state => {
+  return {
+      token: state.token.token
+  }
 }
 
-export default Task;
+export default connect(mapStateToProps) (Task);

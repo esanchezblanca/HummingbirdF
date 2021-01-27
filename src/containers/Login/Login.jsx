@@ -3,12 +3,15 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+//Estilos
 import './Login.css';
 import { notification } from 'antd';
 import 'antd/dist/antd.css';
 
+//Redux
 import {saveToken} from '../../store/login/action';
 import saveUser from '../../store/user/action';
+
 
 const Login = ({saveToken,saveUser}) => {
     
@@ -29,7 +32,6 @@ const Login = ({saveToken,saveUser}) => {
         history.push('/dashboard')
       })
       .catch(err => {
-        console.log(err)
         notification.error({ message: 'Error en el login', description:'No se pudo acceder'})
       })
       

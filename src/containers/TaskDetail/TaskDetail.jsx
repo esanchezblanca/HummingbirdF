@@ -14,7 +14,7 @@ export default class TaskDetail extends Component {
     }
 
     componentDidMount() {
-        //this.getTask();
+      //  this.getTask();
     }
 
 
