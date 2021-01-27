@@ -22,6 +22,7 @@ class Navigation extends Component {
         revokeToken("")
     }
 
+
     render() {
         return (
         
@@ -89,7 +90,7 @@ class Navigation extends Component {
 }
 const mapStateToProps = state => {
     return {
-        user: state.user.user
+        user: JSON.stringify(state.user.user)
     }
 }
 

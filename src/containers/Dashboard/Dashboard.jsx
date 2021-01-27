@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import "./Dashboard.css";
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 import TaskList from '../../containers/TaskList/TaskList';
-import TaskDetail from '../../containers/TaskDetail/TaskDetail';
+
 
 
 class Dashboard extends Component {
@@ -23,7 +22,7 @@ class Dashboard extends Component {
             <div>
                 <div className="taskList">
                     <TaskList />
-                    <TaskDetail />
+                   
                 </div>
             </div>
         );

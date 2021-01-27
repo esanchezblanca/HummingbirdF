@@ -1,5 +1,3 @@
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -11,6 +9,7 @@ import Register from './containers/Register/Register';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Task from './containers/Task/Task';
 import Profile from './containers/Profile/Profile';
+import TaskDetail from './containers/TaskDetail/TaskDetail';
 
 function App() {
   return (
@@ -25,6 +24,7 @@ function App() {
         <Route path="/dashboard" component={Dashboard}/>
         <Route path="/task" component={Task}/>
         <Route path="/profile" component={Profile}/>
+        <Route path="/detail" component={TaskDetail}/>
       </Router>
   );
 }

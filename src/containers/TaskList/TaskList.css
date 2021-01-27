@@ -1,4 +1,4 @@
-.sidebar{
+/* .sidebar{
     background-color: #84bbf381 ;
     width: 30em;
     height: 80em;
@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 0.5em;
-}
+} */
 
 .list{
     display: flex;

@@ -1,58 +1,35 @@
 import React, { Component } from 'react';
 import "./TaskDetail.css";
-import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
 
-export default class TaskDetail extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            taskList: []
-        };
-    }
+const TaskDetail = ({ task }) => {
 
-    componentDidMount() {
-      //  this.getTask();
-    }
+    console.log(task)
+    
 
-
-    getTask() {
-        const token = localStorage.getItem('userToken')
-        axios.get(`https://hummingbirdback.herokuapp.com/api/task`, {
-            headers: {
-                'user-token': token
-            }
-        })
-            .then(res => {
-                console.log(res)
-                this.setState({
-                    taskList: res.data
-                });
-            })
-            .catch(err => { })
-    }
-
-    render() {
-        return (
-            <section>
-                <h1>Tareas en detalle:</h1>
-                { this.state.taskList.map((task) => {
-                    return (
-                        <div>
-                            
-                            {/* <p>Publicado por: {user.name, user.lastName} </p> */}
-                            <p>Título: {task.title} </p>
-                            <p>Descripción: {task.description} </p>
-                        </div>
-
-
-
-
-                    );
-                })
-                }
-            </section>);
+    return (
+        <div className="detailDiv">
+            <h1>Esta es tu tarea:</h1>
+            <div>
+                <p>Título</p>
+                <p className="titleTask"> {task.title}</p>
+            </div>
+            <div>
+                <p>Descipción</p>
+                <p className="titleTask"> {task.description}</p>
+            </div>
+            <div>
+                <p>Curso</p>
+                <p className="titleTask"> {task.year_id}</p>
+            </div>
+        </div>
+    )
+}
+const mapStateToProps = state => {
+    return {
+        task: state.task
     }
 }
+export default connect(mapStateToProps)(TaskDetail);

@@ -1,24 +1,26 @@
-import React, { useRef } from 'react'
-import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import React from 'react'
 import { connect } from 'react-redux';
 
 import './Profile.css';
-import { notification } from 'antd';
 import 'antd/dist/antd.css';
 
-import {saveToken} from '../../store/login/action';
-import saveUser from '../../store/user/action';
 
-const Profile = ({saveUser, saveToken}) => {
+const Profile = ({user}) => {
 
-
+    console.log(user.name)
 
     return(
         <div>
-            <h1>Hola, </h1>
+            <h1>Hola, {user.name} </h1>
+            <div>
+                
+            </div>
         </div>
     )
 }
-
-export default connect(null, {saveToken, saveUser}) (Profile);
+const mapStateToProps = state => {
+    return {
+        user: JSON.parse(state.user.user)
+    }
+}
+export default connect(mapStateToProps) (Profile);
