@@ -59,7 +59,8 @@ Al hacer login, podemos ver nuestra barra de herramientas arriba. Cuenta con un 
 
 
 También veremos que, al hacer login, nos redireccionará la página automáticamente a dashboard, donde tenemos las tareas listadas.
-![Create](https://i.ibb.co/WDqZX4b/dashboard.png)
+Si pulsamos en ver tarea, nos abrirá al lado la tarea seleccionada.
+![Create](https://i.ibb.co/T23kFBp/tareas.png)
 
 A continuación, si pulsamos en crear tarea, nos abrirá esta página. Rellenamos los campos y pulsamos el botón para enviarla. Nos devolverá a la lista de tareas con la nueva ya creada.
 ![CrearTarea](https://i.ibb.co/sPcg79B/creartarea.png)
