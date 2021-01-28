@@ -1,5 +1,7 @@
 .detailDiv{
     display: flex;
     position: relative;
-    margin-right: 50%;
+    margin-left: 50%;
+    width: 100%;
+    
 }

@@ -9,7 +9,8 @@ import Register from './containers/Register/Register';
 import Task from './containers/Task/Task';
 import Profile from './containers/Profile/Profile';
 import TaskDetail from './containers/TaskDetail/TaskDetail';
-import TaskList from './containers/TaskList/TaskList';
+// import TaskList from './containers/TaskList/TaskList';
+import Dashboard from './containers/Dashboard/Dasboard';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/about" component={About}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
-        <Route path="/dashboard" component={TaskList}/>
+        <Route path="/dashboard" component={Dashboard}/>
         <Route path="/task" component={Task}/>
         <Route path="/profile" component={Profile}/>
         <Route path="/detail" component={TaskDetail}/>

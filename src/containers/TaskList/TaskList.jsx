@@ -21,6 +21,11 @@ class TaskList extends Component {
         this.getTask();
     }
 
+    openDetail(task) {
+        console.log(task)
+        this.props.saveTask(JSON.stringify(task))
+    }
+
 
     deleteTask(id) {
         console.log("token en la lborrar", this.props.token)
@@ -69,14 +74,8 @@ class TaskList extends Component {
                                 <div className="titleTask"> {task.title}</div>
 
                             </div>
-                            <div>
-                                <p className="titleTaskEmpty">Descripción:</p>
-                                <div className="titleTask"> {task.description}</div>
-
-                            </div>
-
-
-
+                            
+                            <button class="btn" onClick={() => this.openDetail(task)}>Ver</button>
                             <button class="btn" onClick={() => this.deleteTask(task.id)}>Borrar</button>
                         </div>
 

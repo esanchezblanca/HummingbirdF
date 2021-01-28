@@ -1,8 +1,8 @@
 .sidebar{
     background-color: #84bbf381 ;
-    width: 80em;
+    width: 20em;
     height: 80em;
-    margin-left: 28em;
+    margin-left: 5em;
 }
 
 .sidebar h1{
@@ -46,7 +46,7 @@
 }
 
 .btn { 
-    margin-left: 60em;
+    margin-left: 20em;
     margin-bottom: 2em;
     
 	background-color:#d42323be;

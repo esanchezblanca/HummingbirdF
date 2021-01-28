@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const TaskDetail = ({ task }) => {
 
-    console.log(task)
+    console.log("tasktitle", task)
     
 
     return (
@@ -28,8 +28,9 @@ const TaskDetail = ({ task }) => {
     )
 }
 const mapStateToProps = state => {
+    console.log("NUEVO STATE", state)
     return {
-        task: state.task
+        task: JSON.parse(state.taskReducer.task)
     }
 }
 export default connect(mapStateToProps)(TaskDetail);
