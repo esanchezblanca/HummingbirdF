@@ -6,6 +6,7 @@ export default (state = initialState, action) => {
             ...state,
             token: action.payload
         }
+        
     }else if(action.type === 'REVOKE_TOKEN'){
         return{
             ...state,

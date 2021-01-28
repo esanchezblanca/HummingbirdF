@@ -3,6 +3,7 @@ import "./TaskList.css";
 import axios from 'axios';
 import { connect } from 'react-redux';
 
+import saveTask from '../../store/task/action';
 
 
 class TaskList extends Component {
@@ -10,30 +11,21 @@ class TaskList extends Component {
         super(props);
         this.state = {
             taskList: [],
-            token: ""
+            token: "",
+            saveTask
         };
 
     }
 
-    redirectToHome = () => {
-
-    }
-
-
     componentDidMount() {
-        console.log("tokoen precarga",this.state.token)
         this.getTask();
     }
 
 
-    openDetail() {
-
-    }
-
     deleteTask(id) {
         axios.delete(`https://hummingbirdback.herokuapp.com/api/task/${id}`, {
             headers: {
-                'user-token': this.props.token
+                'user-token': this.props.token.token
             }
         }).then(res => {
             this.getTask();
@@ -42,6 +34,7 @@ class TaskList extends Component {
     }
 
     getTask() {
+        console.log("token en la lista", this.props.token)
         axios.get(`https://hummingbirdback.herokuapp.com/api/task`, {
             headers: {
                 'user-token': this.props.token
@@ -55,33 +48,48 @@ class TaskList extends Component {
             })
             .catch(err => {
                 console.log(err)
-             })
+            })
     }
 
     render() {
         return (
             <section className="sidebar">
                 <h1>Tareas pendientes:</h1>
-                 { this.state.taskList.map((task) => {
+                { this.state.taskList.map((task) => {
                     return (
-                        <div className="list" onClick={() => this.openDetail()}>
+                        <div className="list">
+
+                            <div>
+                                <p className="titleTaskEmpty">Curso:</p>
+                                <div className="titleTask"> {task.year_id}</div>
+
+                            </div>
                             <div>
                                 <p className="titleTaskEmpty">Título:</p>
                                 <div className="titleTask"> {task.title}</div>
-                                <button class="btn" onClick={() => this.deleteTask(task.id)}>Borrar</button>
+
                             </div>
+                            <div>
+                                <p className="titleTaskEmpty">Descripción:</p>
+                                <div className="titleTask"> {task.description}</div>
+
+                            </div>
+
+
+
+                            <button class="btn" onClick={() => this.deleteTask(task.id)}>Borrar</button>
                         </div>
 
                     );
                 })
-                } 
+                }
             </section>);
     }
 }
 const mapStateToProps = state => {
     return {
-        token: state.loginReducer.token
-   }
+        token: state.token.token
+    }
 }
 
-export default connect(mapStateToProps)(TaskList);
+export default connect(mapStateToProps, { saveTask })(TaskList);
