@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/esanchezblanca/HummingbirdF/static/css/main.c26545a2.chunk.css",
+    "main.js": "/esanchezblanca/HummingbirdF/static/js/main.7688fe94.chunk.js",
+    "main.js.map": "/esanchezblanca/HummingbirdF/static/js/main.7688fe94.chunk.js.map",
+    "runtime-main.js": "/esanchezblanca/HummingbirdF/static/js/runtime-main.8ff6b9a1.js",
+    "runtime-main.js.map": "/esanchezblanca/HummingbirdF/static/js/runtime-main.8ff6b9a1.js.map",
+    "static/css/2.d9891754.chunk.css": "/esanchezblanca/HummingbirdF/static/css/2.d9891754.chunk.css",
+    "static/js/2.0fcb823e.chunk.js": "/esanchezblanca/HummingbirdF/static/js/2.0fcb823e.chunk.js",
+    "static/js/2.0fcb823e.chunk.js.map": "/esanchezblanca/HummingbirdF/static/js/2.0fcb823e.chunk.js.map",
+    "index.html": "/esanchezblanca/HummingbirdF/index.html",
+    "static/css/2.d9891754.chunk.css.map": "/esanchezblanca/HummingbirdF/static/css/2.d9891754.chunk.css.map",
+    "static/css/main.c26545a2.chunk.css.map": "/esanchezblanca/HummingbirdF/static/css/main.c26545a2.chunk.css.map",
+    "static/js/2.0fcb823e.chunk.js.LICENSE.txt": "/esanchezblanca/HummingbirdF/static/js/2.0fcb823e.chunk.js.LICENSE.txt",
+    "static/media/Logo.2a67b00e.png": "/esanchezblanca/HummingbirdF/static/media/Logo.2a67b00e.png",
+    "static/media/Register.css": "/esanchezblanca/HummingbirdF/static/media/pencils.cc4ccbc8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ff6b9a1.js",
+    "static/css/2.d9891754.chunk.css",
+    "static/js/2.0fcb823e.chunk.js",
+    "static/css/main.c26545a2.chunk.css",
+    "static/js/main.7688fe94.chunk.js"
+  ]
+}
