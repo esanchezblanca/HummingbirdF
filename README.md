@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# HUMMINGBIRD :
+Proyecto de creación de tareas para colegios
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Logo](Logorm.PNG)
 
-## Available Scripts
 
-In the project directory, you can run:
+## TABLE OF CONTENTS
+1. [ Links ](#links) :hammer:
+2. [ Descripción ](#description) 
+3. [ Instalación ](#setup) :technologist:
+4. [ Funcionamiento ](#run) :hammer:
+5. [ Base de Datos ](#db) 
+6. [ Tecnologías ](#technologies) :space_invader:
+7. [ Licencia ](#license) :raising_hand_woman:
 
-### `npm start`
+<a name="links"></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Links
+Backend:https://git.heroku.com/hummingbirdback.git
+Frontend: 
+Git repository (back): https://git.heroku.com/hummingbirdback.git
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<a name="description"></a>
 
-### `npm test`
+## Descripción 
+Hummingbird es una app creada para los colegios, en especial para aquellos alumnos que estén en secundaria. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+La idea de esta app es que desde casa, mientras asisten a clase, los profesores y los alumnos puedan estar comunicados y tengan un espacio estable donde alojar las tareas que se mandan en clase. 
 
-### `npm run build`
+La característica principal de este proyecto es su sencillez. Se ha buscado en todo momento que fuese un entorno atractivo y colorido pensando siempre a la edad del público a quien va dirigida, es decir entre primero y cuarto de la E.S.O. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<a name="setup"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instalación :technologist:
+Descargar o clonar. Acceder a la carpeta y escribir en el terminal: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm start
+```
 
-### `npm run eject`
+Es posible que necesite instalar dependencias: 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<a name="run"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Funcionamiento :hammer:
+Acceda a la página web. Si no tiene usuario, podrá crearse uno o bien con nuestra pantalla principal o bien con la barra de tareas superior pulsando en register.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+Al hacer login, podemos ver nuestra barra de herramientas arriba. Cuenta con un botón para crear tareas, otro para ver el perfil, otro para volver a la pantalla actual en la que se muestran las tareas listadas y por último el de cerrar la sesión.
+![Navbar](https://i.ibb.co/BfxDG5m/barra.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A continuación, si pulsamos en crear tarea, nos abrirá esta página. Rellenamos los campos y pulsamos el botón para enviarla. Nos devolverá a la lista de tareas con la nueva ya creada.
+![CrearTarea](https://i.ibb.co/sPcg79B/creartarea.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<a name="data"></a>
 
-### Code Splitting
+## Database :scroll:
+Here's the database schema
+![Database](https://i.ibb.co/W3jyLcP/DBdiagram.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+<a name="technologies"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Technologies :space_invader:
+- JS
+- Node.js
+- PhpMyAdmin
+- MySQL
+- React
+- Redux
+- CSS
+- JS
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<a name="license"></a>
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License :raising_hand_woman:
+Este proyecto ha sido realizado por Elena Sánchez de la Blanca y está sujeto a la licencia MIT. Para obtener más información, por favor diríjase al archivo LICENSE que encontrará adjunto.
