@@ -28,8 +28,7 @@ class TaskList extends Component {
 
 
     deleteTask(id) {
-        console.log("token en la lborrar", this.props.token)
-        axios.delete(`https://hummingbirdback.herokuapp.com/api/task/${id}`, {
+            axios.delete(`https://hummingbirdback.herokuapp.com/api/task/${id}`, {
             headers: {
                 'user-token': this.props.token
             }
@@ -59,17 +58,17 @@ class TaskList extends Component {
     render() {
         return (
             <section className="sidebar">
-                <h1>Tareas pendientes:</h1>
+                <h1 className="pending">Tareas pendientes</h1>
                 { this.state.taskList.map((task) => {
                     return (
                         <div className="list">
 
-                            <div>
+                            <div className="shownInfo">
                                 <p className="titleTaskEmpty">Curso:</p>
                                 <div className="titleTask"> {task.year_id}</div>
 
                             </div>
-                            <div>
+                            <div className="shownInfo">
                                 <p className="titleTaskEmpty">Título:</p>
                                 <div className="titleTask"> {task.title}</div>
 
@@ -77,6 +76,8 @@ class TaskList extends Component {
                             
                             <button class="btn" onClick={() => this.openDetail(task)}>Ver</button>
                             <button class="btn" onClick={() => this.deleteTask(task.id)}>Borrar</button>
+                            
+                           
                         </div>
 
                     );

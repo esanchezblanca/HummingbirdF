@@ -7,22 +7,26 @@ import { connect } from 'react-redux';
 const TaskDetail = ({ task }) => {
 
     console.log("tasktitle", task)
-    
+
 
     return (
         <div className="detailDiv">
-            <h1>Esta es tu tarea:</h1>
-            <div>
-                <p>Título</p>
-                <p className="titleTask"> {task.title}</p>
-            </div>
-            <div>
-                <p>Descipción</p>
-                <p className="titleTask"> {task.description}</p>
-            </div>
-            <div>
-                <p>Curso</p>
-                <p className="titleTask"> {task.year_id}</p>
+            <h1 className="openTask">Esta es tu tarea:</h1>
+            <div className="card">
+
+
+                <div className="cardUnit">
+                    <p className="tasktitle">Título:</p>
+                    <p className="description"> {task.title}</p>
+                </div>
+                <div className="cardUnit">
+                    <p className="tasktitle">Descipción:</p>
+                    <p className="description"> {task.description}</p>
+                </div>
+                <div className="cardUnit">
+                    <p className="tasktitle">Curso</p>
+                    <p className="description"> {task.year_id}</p>
+                </div>
             </div>
         </div>
     )

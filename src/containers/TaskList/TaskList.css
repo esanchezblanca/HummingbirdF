@@ -1,44 +1,30 @@
 .sidebar{
-    background-color: #84bbf381 ;
-    width: 20em;
-    height: 80em;
-    margin-left: 5em;
-}
-
-.sidebar h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.5em;
-} */
-
-.list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: -3em;
-    margin-top: 2em;
-   
-}
-
-.list div{
-    width:90%;
+    position: absolute;
+    width: 30em;
     height: 100%;
+    
+    margin-left: 2em;
+    background-color:  rgba(54, 190, 195, 0.185);
+    backdrop-filter: blur(6px);
+}
 
+
+.shownInfo{
     display: flex;
     flex-direction: row;
-    align-items: baseline;
-    background-color:#fbfbfbcc;
-    border-radius:6px;
-    margin-bottom: 0.5em;
-    margin-left: 4em;
-}
-
-.titleTaskEmpty{
-    margin-left: 0.5em;
+    margin-left: 2em;
 }
 
 .titleTask{
+    
+    font-family: 'Roboto', sans-serif;
+	font-size:15px;
+    font-weight:bold;
+    margin-left: 0.5em;
+}
+
+.titleTaskEmpty{
+    
     font-family: 'Roboto', sans-serif;
 	font-size:15px;
     font-weight:bold;
@@ -46,8 +32,15 @@
 }
 
 .btn { 
-    margin-left: 20em;
+    display: flex;
+    flex-direction: row;
+    width: 5em;
+    position: relative;
+    left: 15em;
+
     margin-bottom: 2em;
+    margin-right: 1em;
+    
     
 	background-color:#d42323be;
 	border-radius:6px;
@@ -58,7 +51,15 @@
 	font-family: 'Roboto', sans-serif;
 	font-size:15px;
 	font-weight:bold;
-	padding:10px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #528ecc;
+}
+
+.pending{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5em;
+    font-family: 'Roboto', sans-serif;
 }

@@ -1,7 +1,43 @@
 .detailDiv{
+    width: 60%;
+    height: 100%;
+
     display: flex;
-    position: relative;
-    margin-left: 50%;
-    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 40em;
     
+        
+}
+
+.openTask{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.card{
+    
+    backdrop-filter: blur(6px);
+    border-radius: 15px;
+    background-color:  rgba(54, 190, 195, 0.185);
+
+}
+
+.tasktitle{
+    font-family: 'Roboto', sans-serif;
+	font-size:20px;
+    font-weight:bold;
+    margin-left:2em;
+    margin-top: 1em;
+}
+
+.description{
+    font-family: 'Roboto', sans-serif;
+	font-size:18px;
+    margin-left: 3em;
 }
