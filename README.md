@@ -9,7 +9,7 @@ Proyecto de creación de tareas para colegios
 2. [ Descripción ](#description) 
 3. [ Instalación ](#setup) :technologist:
 4. [ Funcionamiento ](#run) :hammer:
-5. [ Base de Datos ](#db) 
+5. [ Base de Datos ](#db) :scroll:
 6. [ Tecnologías ](#technologies) :space_invader:
 7. [ Licencia ](#license) :raising_hand_woman:
 
@@ -59,7 +59,7 @@ A continuación, si pulsamos en crear tarea, nos abrirá esta página. Rellenamo
 <a name="db"></a>
 
 ## Database :scroll:
-Here's the database schema
+Esquema de la base de datos
 ![Database](https://i.ibb.co/W3jyLcP/DBdiagram.png)
 
 
