@@ -34,7 +34,7 @@ const TaskDetail = ({ task }) => {
 const mapStateToProps = state => {
     console.log("NUEVO STATE", state)
     return {
-        task: state.taskReducer.task
+        task: JSON.parse(state.taskReducer.task)
     }
 }
 export default connect(mapStateToProps)(TaskDetail);
