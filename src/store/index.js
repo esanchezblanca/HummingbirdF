@@ -15,7 +15,6 @@ const mainEnhancer = compose(persistState('user','token','task'));
 
 const store = createStore(
     reducers,
-    {},
     mainEnhancer);
     
 
