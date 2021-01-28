@@ -11,4 +11,4 @@ export default (state = initialState, action) => {
     return state;
 };
 
-export const selectActiveTask = state => state.taskReducer.task;
+export const selectActiveTask = state => state.task;

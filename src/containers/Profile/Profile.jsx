@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 
 const Profile = ({user}) => {
 
-    console.log(user.name)
+    console.log("profile/user ", user)
 
     return(
         <div className="dataDiv">
@@ -22,8 +22,9 @@ const Profile = ({user}) => {
     )
 }
 const mapStateToProps = state => {
+    console.log(state)
     return {
-        user: JSON.parse(state.user.user)
+        user: state.userReducer.user
     }
 }
 export default connect(mapStateToProps) (Profile);

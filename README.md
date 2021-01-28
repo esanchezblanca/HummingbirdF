@@ -9,7 +9,7 @@ Proyecto de creación de tareas para colegios
 2. [ Descripción ](#description) 
 3. [ Instalación ](#setup) :technologist:
 4. [ Funcionamiento ](#run) :hammer:
-5. [ Base de Datos ](#db) 
+5. [ Base de Datos ](#db) :scroll:
 6. [ Tecnologías ](#technologies) :space_invader:
 7. [ Licencia ](#license) :raising_hand_woman:
 
@@ -49,17 +49,45 @@ npm install
 ## Funcionamiento :hammer:
 Acceda a la página web. Si no tiene usuario, podrá crearse uno o bien con nuestra pantalla principal o bien con la barra de tareas superior pulsando en register.
 
+En caso de tener usuario, puede pulsar en cualquiera de los recuadros marcados con verde para acceder. 
+
+![Create](https://i.ibb.co/m8SFDn4/main.png)
+
 
 Al hacer login, podemos ver nuestra barra de herramientas arriba. Cuenta con un botón para crear tareas, otro para ver el perfil, otro para volver a la pantalla actual en la que se muestran las tareas listadas y por último el de cerrar la sesión.
 ![Navbar](https://i.ibb.co/BfxDG5m/barra.png)
 
+
+También veremos que, al hacer login, nos redireccionará la página automáticamente a dashboard, donde tenemos las tareas listadas.
+![Create](https://i.ibb.co/WDqZX4b/dashboard.png)
+
 A continuación, si pulsamos en crear tarea, nos abrirá esta página. Rellenamos los campos y pulsamos el botón para enviarla. Nos devolverá a la lista de tareas con la nueva ya creada.
 ![CrearTarea](https://i.ibb.co/sPcg79B/creartarea.png)
+
+Si pulsamos el botón borrar eliminaremos la tarea seleccionada.
+
+
+La aplicación ya viene con unos usuarios ficticios creados.
+
+1. Inspector Chalmers 
+    mail: chalmers@inspector.com
+    contraseña: chalmers
+    rol: super (1)
+
+2. Profesor Bacterio
+    mail: bacterio@tia.es
+    contraseña: bacterio
+    rol: profesor (2)
+
+3. Alumno Alúmnez
+    mail: prueba@alumno.com
+    contraseña: 1234
+    rol: alumno (3)
 
 <a name="db"></a>
 
 ## Database :scroll:
-Here's the database schema
+Esquema de la base de datos
 ![Database](https://i.ibb.co/W3jyLcP/DBdiagram.png)
 
 

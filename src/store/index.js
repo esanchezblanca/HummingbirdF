@@ -4,20 +4,18 @@ import userReducer from './user/reducer';
 import taskReducer from './task/reducer';
 import persistState from 'redux-localstorage';
 
-
 const reducers = combineReducers({
-   user: userReducer,
-   token: loginReducer,
-   task: taskReducer
+    userReducer,
+    loginReducer,
+    taskReducer,
 });
 
-//Persistencia del estado
-const mainEnhancer = compose(persistState('user','token','task'));
+
+const mainEnhancer = compose(persistState(userReducer.user,loginReducer.token,taskReducer.task));
 
 const store = createStore(
     reducers,
-    mainEnhancer);
-    
-
+    mainEnhancer
+);
 
 export default store;

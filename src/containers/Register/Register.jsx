@@ -4,7 +4,7 @@ import axios from 'axios';
 import { notification } from 'antd';
 import 'antd/dist/antd.css';
 import { useHistory } from 'react-router-dom';
-import validator from 'validator';
+
 
 
 const Register = () => {

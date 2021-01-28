@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navigation from './components/Navigation/Navigation';
 import Home from './containers/Home/Home';
@@ -14,6 +14,7 @@ import TaskList from './containers/TaskList/TaskList';
 function App() {
   return (
    <Router>
+     
         <Navigation />
 
 
@@ -25,6 +26,8 @@ function App() {
         <Route path="/task" component={Task}/>
         <Route path="/profile" component={Profile}/>
         <Route path="/detail" component={TaskDetail}/>
+
+      
       </Router>
   );
 }

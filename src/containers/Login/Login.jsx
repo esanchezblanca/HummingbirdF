@@ -10,7 +10,7 @@ import 'antd/dist/antd.css';
 
 //Redux
 import {saveToken} from '../../store/login/action';
-import saveUser from '../../store/user/action';
+import {saveUser} from '../../store/user/action';
 
 
 const Login = ({saveToken,saveUser}) => {
@@ -27,7 +27,7 @@ const Login = ({saveToken,saveUser}) => {
       await axios.post('https://hummingbirdback.herokuapp.com/api/user/login', login).then(res => {
 
         saveToken(res.data.token);
-        saveUser(JSON.stringify(res.data.user));
+        saveUser(res.data.user);
         notification.success({ message: 'Login correcto'})
         history.push('/dashboard')
       })

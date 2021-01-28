@@ -23,6 +23,7 @@ const Task = ({token}) => {
 
       // const token = localStorage.getItem('userToken')
       console.log("esto es un usuario", user);
+      console.log("esto es un tokrn", token);
       const form = event.target;
       const addTask = {
         title: form.title.value,
@@ -86,7 +87,7 @@ const Task = ({token}) => {
  
 const mapStateToProps = state => {
   return {
-      token: state.token.token
+      token: state.loginReducer.token
   }
 }
 

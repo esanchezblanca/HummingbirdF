@@ -7,8 +7,14 @@ export default (state = initialState, action) => {
             user: action.payload
         }
     }
+    else if (action.type === 'REMOVE_USER') {
+        return {
+            ...state,
+            user: action.payload
+        }
+    }
 
     return state;
 };
 
-export const selectActiveUser = state => state.userReducer.user;
+export const selectActiveUser = state => state.user;
