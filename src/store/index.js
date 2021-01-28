@@ -11,6 +11,7 @@ const reducers = combineReducers({
    task: taskReducer
 });
 
+//Persistencia del estado
 const mainEnhancer = compose(persistState('user','token','task'));
 
 const store = createStore(

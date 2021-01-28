@@ -34,9 +34,10 @@ class TaskList extends Component {
     }
 
     getTask() {
+        console.log("token en la lista", this.props.token)
         axios.get(`https://hummingbirdback.herokuapp.com/api/task`, {
             headers: {
-                'user-token': this.props.token.token
+                'user-token': this.props.token
             }
         })
             .then(res => {
@@ -87,7 +88,7 @@ class TaskList extends Component {
 }
 const mapStateToProps = state => {
     return {
-        token: state.token
+        token: state.token.token
     }
 }
 

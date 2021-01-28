@@ -1,0 +1,36 @@
+.dataDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10em;
+   
+}
+
+.dataDiv div{
+    width: 250px;
+    height: 100%;
+}
+
+.singleData{
+   font-size: 16px;
+   font-weight: bold;
+   font-family: 'Roboto', sans-serif;
+}
+
+
+.personalCard{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+.greeting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px ;
+    color: #d32088;
+}
