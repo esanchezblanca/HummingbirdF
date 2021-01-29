@@ -74,8 +74,8 @@ class TaskList extends Component {
 
                             </div>
                             
-                            <button class="btn" onClick={() => this.openDetail(task)}>Ver</button>
-                            <button class="btn" onClick={() => this.deleteTask(task.id)}>Borrar</button>
+                            <button className="btn" onClick={() => this.openDetail(task)}>Ver</button>
+                            <button className="btn" onClick={() => this.deleteTask(task.id)}>Borrar</button>
                             
                            
                         </div>

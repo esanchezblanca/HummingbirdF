@@ -3,7 +3,7 @@ import './Navigation.css'
 import Logo from '../../images/Logo.png';
 
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import  { saveToken }  from '../../store/login/action'
 
 class Navigation extends Component {
@@ -29,9 +29,9 @@ class Navigation extends Component {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <img src={Logo} className="logoImg"></img>
-                    <Link className="logoName" to="/">
+                    <NavLink className="logoName" to="/">
                         Hummingbird
-                    </Link>
+                    </NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -53,13 +53,13 @@ class Navigation extends Component {
                                     </li>
 
                                   
-                                    <li activeClassName="activado" className="nav-button"  >
+                                    <li className="nav-button"  >
                                         <a className="nav-link" href="profile">Perfil</a>
                                     </li>
-                                    <li activeClassName="activado" className="nav-button"  >
+                                    <li className="nav-button"  >
                                         <a className="nav-link" href="dashboard">Dashboard</a>
                                     </li>
-                                    <li activeClassName="activado" className="nav-button"  >
+                                    <li className="nav-button"  >
                                         <a className="nav-link" href="/" onClick={() => this.logout()}>Logout</a>
                                     </li>
 
@@ -71,7 +71,7 @@ class Navigation extends Component {
                                     <li className="nav-button">
                                         <a className="nav-link" href="/about">About Us</a>
                                     </li>
-                                    <li activeClassName="activado" className="nav-button"  >
+                                    <li className="nav-button"  >
                                         <a className="nav-link" href="login">Login</a>
                                     </li>
 
