@@ -23,7 +23,7 @@ const Task = ({token}) => {
 
       // const token = localStorage.getItem('userToken')
       console.log("esto es un usuario", user);
-      console.log("esto es un tokrn", token);
+      console.log("esto es un token", token);
       const form = event.target;
       const addTask = {
         title: form.title.value,

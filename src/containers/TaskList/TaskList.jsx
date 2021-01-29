@@ -57,25 +57,25 @@ class TaskList extends Component {
 
     render() {
         return (
-            <section className="sidebar">
+            <section className="sidebar" key="1">
                 <h1 className="pending">Tareas pendientes</h1>
-                { this.state.taskList.map((task) => {
+                { this.state.taskList.map((value, key) => {
                     return (
-                        <div className="list">
+                        <div className="list" key={key}>
 
                             <div className="shownInfo">
                                 <p className="titleTaskEmpty">Curso:</p>
-                                <div className="titleTask"> {task.year_id}</div>
+                                <div className="titleTask"> {value.year_id}</div>
 
                             </div>
                             <div className="shownInfo">
                                 <p className="titleTaskEmpty">Título:</p>
-                                <div className="titleTask"> {task.title}</div>
+                                <div className="titleTask"> {value.title}</div>
 
                             </div>
                             
-                            <button className="btn" onClick={() => this.openDetail(task)}>Ver</button>
-                            <button className="btn" onClick={() => this.deleteTask(task.id)}>Borrar</button>
+                            <button className="btn" key="task openDetail" onClick={() => this.openDetail(value)}>Ver</button>
+                            <button className="btn" key="task2"onClick={() => this.deleteTask(value.id)}>Borrar</button>
                             
                            
                         </div>
