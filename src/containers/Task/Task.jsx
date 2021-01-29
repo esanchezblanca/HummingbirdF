@@ -13,14 +13,14 @@ import 'antd/dist/antd.css';
 
 
 //Este componente está pensado para crear una tarea
-const Task = ({token}) => {
+const Task = ({token, user}) => {
 
     const history = useHistory();
     const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const user = JSON.parse(localStorage.getItem('user'));
-
+      
+      
       // const token = localStorage.getItem('userToken')
       console.log("esto es un usuario", user);
       console.log("esto es un token", token);
@@ -87,7 +87,8 @@ const Task = ({token}) => {
  
 const mapStateToProps = state => {
   return {
-      token: state.loginReducer.token
+      token: state.loginReducer.token,
+      user: state.userReducer.user
   }
 }
 
