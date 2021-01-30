@@ -23,7 +23,7 @@ class TaskList extends Component {
 
     openDetail(task) {
         console.log(task)
-        this.props.saveTask(JSON.stringify(task))
+        this.props.saveTask(task)
     }
 
 
